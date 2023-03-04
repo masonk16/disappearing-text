@@ -1,1 +1,67 @@
 from tkinter import *
+
+# LOGIC
+user_text = ""
+timer = None
+
+# UI SETUP
+
+BORDER = "#3C2C3E"
+FG = 'khaki'
+BG = "#4B5D67"
+
+FONT_FAMILY1 = 'Calibri'
+FONT_FAMILY2 = 'Helvetica'
+
+FONT_SIZE1 = 14
+FONT_SIZE2 = 18
+FONT_SIZE3 = 24
+
+FONT_STYLE1 = 'normal'
+FONT_STYLE2 = 'italic'
+FONT_STYLE3 = 'bold'
+
+PARA_FONT = (FONT_FAMILY1, FONT_SIZE1, FONT_STYLE3)
+PARA_FONT2 = (FONT_FAMILY1, 12, FONT_STYLE2)
+HEAD_FONT = (FONT_FAMILY2, FONT_SIZE3, FONT_STYLE1)
+
+heading = "WRITE WITH MAGICAL INK"
+instruction = "If you don't press any key for 5 seconds, \
+the text you have written will disappear"
+
+window = Tk()
+window.title('Disappearing Text Desktop App')
+window.config(bg=BG, padx=20, pady=10)
+
+heading = Label(text=heading, font=HEAD_FONT,
+                bg=BG, fg=FG, padx=10, pady=10)
+instruction = Label(text=instruction, font=PARA_FONT2,
+                    fg=FG, bg=BG, pady=10)
+typing_area = Text(font=PARA_FONT, bg=BG, fg=FG,
+                   width=100, height=15, wrap='w',
+                   highlightcolor=BORDER,
+                   highlightthickness=4,
+                   highlightbackground=BORDER,
+                   padx=5, pady=5)
+typing_area.bind('<KeyPress>', start_calculating)
+reset_btn = Button(text='Reset', fg=FG, bg=BG,
+                   font=PARA_FONT,
+                   highlightbackground=FG,
+                   highlightcolor=FG,
+                   highlightthickness=0, border=3,
+                   command=reset_app, width=50)
+
+save_btn = Button(text='Save', fg=FG, bg=BG,
+                  font=PARA_FONT,
+                  highlightbackground=FG,
+                  highlightcolor=FG,
+                  highlightthickness=0, border=3,
+                  command=save_text, width=50)
+
+heading.grid(row=0, column=0, columnspan=3)
+instruction.grid(row=2, column=0, columnspan=3)
+typing_area.grid(row=3, column=0, columnspan=3)
+reset_btn.grid(row=4, column=0)
+save_btn.grid(row=4, column=2)
+
+window.mainloop()
