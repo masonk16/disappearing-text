@@ -56,8 +56,8 @@ def save_text():
 
 # UI SETUP
 BORDER = "#3C2C3E"
-FG = 'khaki'
-BG = "#4B5D67"
+FG = "#ADD8E6"
+BG = '#00008b'
 
 FONT_FAMILY1 = 'Calibri'
 FONT_FAMILY2 = 'Helvetica'
@@ -74,8 +74,7 @@ PARA_FONT = (FONT_FAMILY1, FONT_SIZE1, FONT_STYLE3)
 PARA_FONT2 = (FONT_FAMILY1, 12, FONT_STYLE2)
 HEAD_FONT = (FONT_FAMILY2, FONT_SIZE3, FONT_STYLE1)
 
-heading = "If you don't press any key for 5 seconds, \
-the text you have written will disappear"
+heading = "KEEP TYPING!!!"
 
 window = Tk()
 window.title('Disappearing Text Desktop App')
