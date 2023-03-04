@@ -74,8 +74,7 @@ PARA_FONT = (FONT_FAMILY1, FONT_SIZE1, FONT_STYLE3)
 PARA_FONT2 = (FONT_FAMILY1, 12, FONT_STYLE2)
 HEAD_FONT = (FONT_FAMILY2, FONT_SIZE3, FONT_STYLE1)
 
-heading = "WRITE WITH MAGICAL INK"
-instruction = "If you don't press any key for 5 seconds, \
+heading = "If you don't press any key for 5 seconds, \
 the text you have written will disappear"
 
 window = Tk()
@@ -84,8 +83,6 @@ window.config(bg=BG, padx=20, pady=10)
 
 heading = Label(text=heading, font=HEAD_FONT,
                 bg=BG, fg=FG, padx=10, pady=10)
-instruction = Label(text=instruction, font=PARA_FONT2,
-                    fg=FG, bg=BG, pady=10)
 typing_area = Text(font=PARA_FONT, bg=BG, fg=FG,
                    width=100, height=15, wrap='w',
                    highlightcolor=BORDER,
@@ -108,7 +105,6 @@ save_btn = Button(text='Save', fg=FG, bg=BG,
                   command=save_text, width=50)
 
 heading.grid(row=0, column=0, columnspan=3)
-instruction.grid(row=2, column=0, columnspan=3)
 typing_area.grid(row=3, column=0, columnspan=3)
 reset_btn.grid(row=4, column=0)
 save_btn.grid(row=4, column=2)
