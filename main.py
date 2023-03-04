@@ -83,20 +83,13 @@ window.config(bg=BG, padx=20, pady=10)
 
 heading = Label(text=heading, font=HEAD_FONT,
                 bg=BG, fg=FG, padx=10, pady=10)
-typing_area = Text(font=PARA_FONT, bg=BG, fg=FG,
+typing_area = Text(font=PARA_FONT, bg="white", fg="black",
                    width=100, height=15, wrap='w',
                    highlightcolor=BORDER,
                    highlightthickness=4,
                    highlightbackground=BORDER,
                    padx=5, pady=5)
 typing_area.bind('<KeyPress>', start_calculating)
-reset_btn = Button(text='Reset', fg=FG, bg=BG,
-                   font=PARA_FONT,
-                   highlightbackground=FG,
-                   highlightcolor=FG,
-                   highlightthickness=0, border=3,
-                   command=reset_app, width=50)
-
 save_btn = Button(text='Save', fg=FG, bg=BG,
                   font=PARA_FONT,
                   highlightbackground=FG,
@@ -106,7 +99,6 @@ save_btn = Button(text='Save', fg=FG, bg=BG,
 
 heading.grid(row=0, column=0, columnspan=3)
 typing_area.grid(row=3, column=0, columnspan=3)
-reset_btn.grid(row=4, column=0)
-save_btn.grid(row=4, column=2)
+save_btn.grid(row=4, column=1)
 
 window.mainloop()
