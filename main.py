@@ -21,8 +21,16 @@ def start_calculating(event):
     return
 
 
-# UI SETUP
+def reset_app():
+    global timer, user_text
+    typing_area.delete('1.0', 'end')
+    user_text = ""
+    timer = None
+    return
 
+
+
+# UI SETUP
 BORDER = "#3C2C3E"
 FG = 'khaki'
 BG = "#4B5D67"
