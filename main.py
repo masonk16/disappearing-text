@@ -4,6 +4,23 @@ from tkinter import *
 user_text = ""
 timer = None
 
+
+def start_calculating(event):
+    global timer, user_text
+
+    if timer is not None:
+        window.after_cancel(timer)
+
+    if event.keysym == "BackSpace":
+        user_text = user_text[0: len(user_text) - 1]
+
+    elif event.char:
+        user_text += event.char
+        timer = window.after(5000, reset_app)
+
+    return
+
+
 # UI SETUP
 
 BORDER = "#3C2C3E"
